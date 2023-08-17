@@ -1,4 +1,5 @@
 package ru.netology.statistic;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,8 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
-   @Test
+
+    @Test
     public void negativeStationNumber() {
         Radio radio = new Radio();
 
@@ -25,7 +27,8 @@ public class RadioTest {
         int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
-}
+    }
+
     @Test
     public void setInvalidStation() {
         Radio radio = new Radio();
@@ -50,6 +53,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void switchToNext9() {
         Radio radio = new Radio();
@@ -75,6 +79,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void switchToPrev9() {
         Radio radio = new Radio();
@@ -136,6 +141,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void soundSwitchVolume() {
         Radio radio = new Radio();
@@ -149,21 +155,21 @@ public class RadioTest {
 
     }
 
-        @Test
-        public void increaseVolumeFrom0() {
-            Radio radio = new Radio();
-            radio.increaseVolume();
+    @Test
+    public void increaseVolumeFrom0() {
+        Radio radio = new Radio();
+        radio.increaseVolume();
 
 
-            int expected = 1;
-            int actual = radio.getCurrentVolume();
+        int expected = 1;
+        int actual = radio.getCurrentVolume();
 
-            Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
 
-        }
+    }
 
-         @Test
-        public  void volumeOver100() {
+    @Test
+    public void volumeOver100() {
         Radio radio = new Radio();
         radio.increaseVolume();
         radio.setCurrentVolume(101);
@@ -173,6 +179,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void complexTest() {
         Radio radio = new Radio();
@@ -192,5 +199,5 @@ public class RadioTest {
         Assertions.assertEquals(expectedVolume, actualVolume);
     }
 
-    }
+}
 

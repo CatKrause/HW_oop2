@@ -5,6 +5,34 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     @Test
+    public void setNumberStations() {
+        Radio radio = new Radio(9);
+        radio.setCurrentNumber(5);
+        int expected = 5;
+        int actual = radio.getCurrentNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void setCurrentVolume() {
+        Radio radio = new Radio( 100);
+        radio.setCurrentVolume(50);
+        Assertions.assertEquals(50, radio.getCurrentVolume());
+    }
+    @Test
+    public void exceedingNaxVolume() {
+        Radio radio = new Radio( 150);
+
+        Assertions.assertEquals(100, radio.getMaxVolume());
+    }
+    @Test
+    public void exceedingMinVolume() {
+        Radio radio = new Radio(-1);
+
+        Assertions.assertEquals(0, radio.getMinVolume());
+        Assertions.assertEquals(100, radio.getMaxVolume());
+    }
+    @Test
     public void shouldSetNumber() {
         Radio radio = new Radio();
 

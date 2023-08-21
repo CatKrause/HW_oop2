@@ -9,9 +9,11 @@ public class Radio {
 
     private int currentNumber = minNumber;
     private int currentVolume = minVolume;
+
     public Radio() {
 
     }
+
     public Radio(int countStation) {
 
     }
@@ -53,7 +55,7 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < minNumber) {
+        if (currentVolume < minVolume) {
             return;
         }
 
@@ -92,6 +94,7 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
+
 
 }
 

@@ -5,38 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     @Test
-    public void setNumberStations() {
-        Radio radio = new Radio(9);
-        radio.setCurrentNumber(5);
-        int expected = 5;
-        int actual = radio.getCurrentNumber();
-        Assertions.assertEquals(expected, actual);
-
-    }
-
-    @Test
-    public void setCurrentVolume() {
-        Radio radio = new Radio(100);
-        radio.setCurrentVolume(50);
-        Assertions.assertEquals(50, radio.getCurrentVolume());
-    }
-
-    @Test
-    public void exceedingNaxVolume() {
-        Radio radio = new Radio(150);
-
-        Assertions.assertEquals(100, radio.getMaxVolume());
-    }
-
-    @Test
-    public void exceedingMinVolume() {
-        Radio radio = new Radio(-1);
-
-        Assertions.assertEquals(0, radio.getMinVolume());
-        Assertions.assertEquals(100, radio.getMaxVolume());
-    }
-
-    @Test
     public void shouldSetNumber() {
         Radio radio = new Radio();
 
@@ -232,19 +200,13 @@ public class RadioTest {
     }
 
     @Test
-    public void constructorWithoutParameters() {
-        Radio radio = new Radio();
+    public void settingTheNumberStations() {
+        Radio radio = new Radio(50);
+        radio.setCurrentNumber(35);
+        int expected = 35;
+        int actual = radio.getCurrentNumber();
 
-        int expectedNumber = 0;
-        int expectedVolume = 0;
+        Assertions.assertEquals(expected, actual);
 
-        int actualNumber = radio.getCurrentNumber();
-        int actualVolume = radio.getCurrentVolume();
-
-        Assertions.assertEquals(expectedNumber, actualNumber);
-        Assertions.assertEquals(expectedVolume, actualVolume);
     }
 }
-
-
-
